@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@keyframes waveMotion {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-25%);
+    }
+}
+
+.animate-waveMotion {
+    animation: waveMotion 4s linear infinite alternate;
+}
+
+
+@keyframes randomFloat {
+    0%   { transform: translate(0, 0) rotate(0deg); }
+    10%  { transform: translate(25px, -15px) rotate(5deg); }
+    20%  { transform: translate(-10px, -30px) rotate(-2deg); }
+    30%  { transform: translate(-30px, 5px) rotate(-7deg); }
+    40%  { transform: translate(15px, 30px) rotate(3deg); }
+    50%  { transform: translate(35px, 5px) rotate(8deg); }
+    60%  { transform: translate(10px, -25px) rotate(4deg); }
+    70%  { transform: translate(-35px, -10px) rotate(-5deg); }
+    80%  { transform: translate(-5px, 35px) rotate(-3deg); }
+    90%  { transform: translate(30px, 20px) rotate(6deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.floating-emoji {
+    animation: randomFloat 20s linear infinite;
+    opacity: 0.08;
+    position: absolute;
+    font-size: 3rem;
+    pointer-events: none;
+}
