@@ -73,7 +73,7 @@ const Navbar = () => {
             className="absolute top-20 right-4 w-52 bg-black text-white rounded-lg shadow-lg z-50 p-3 flex flex-col space-y-2"
           >
             <button
-              onClick={() => { scrollToSection('fast-channels'); setIsMenuOpen(false); }}
+              onClick={() => { navigate('/fastchannels'); setIsMenuOpen(false); }}
               className="text-left px-3 py-2 rounded hover:bg-orange-500 transition-colors"
             >
               FAST Channels
