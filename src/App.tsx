@@ -168,10 +168,13 @@ function App() {
             </div>
             <motion.button
               whileHover={{ scale: 1.05 }}
-              className="bg-gradient-to-r from-red-600 to-orange-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-red-700 hover:to-orange-600 transition-colors shadow-lg shadow-red-900/30"
+              whileTap={{ scale: 0.95 }}
+              className="cursor-pointer bg-gradient-to-r from-red-600 to-orange-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-red-700 hover:to-orange-600 transition-colors shadow-lg shadow-red-900/30"
             >
-              Submit Your Film or Content Today
+              <span className="whitespace-nowrap">Submit Your Film or Content Today</span>
+              <ArrowRight className="ml-2 w-5 h-5 inline" />
             </motion.button>
+
 
             {/* Spinning reel effect */}
             <motion.div
@@ -200,20 +203,21 @@ function App() {
         <section className="relative bg-gradient-to-br from-red-800 via-orange-700 to-yellow-600 pb-16 px-4 sm:px-6 lg:px-8" style={{ marginTop: '-2px' }}>
           <div className="max-w-7xl mx-auto mb-24 relative">
             <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12 pt-32">
-              Most filmmakers and content owners are sitting on gold and don't even know it.
+              Most filmmakers and content owners are sitting on gold & don't even know it.
             </h2>
             <div className="bg-gray-900 border border-red-800/50 rounded-2xl p-8 shadow-lg shadow-red-900/30">
               <p className="text-xl text-gray-300 mb-8">
                 In today's market, if you're not leveraging FAST platforms or digital distribution networks, you're leaving money and reach on the table.
               </p>
               <motion.div className="text-center" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={3}>
-                <p className="text-2xl mb-10 font-semibold text-red-400">
+                <p className="text-2xl mb-10 font-semibold text-orange-600">
                   Are you struggling to:
                 </p>
               </motion.div>
               <motion.div
                 className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10"
                 initial="hidden"
+                variants={fadeUp}
                 whileInView="visible"
                 viewport={{ once: true }}
               >
@@ -226,18 +230,16 @@ function App() {
                   <motion.div 
                     key={index}
                     className="bg-gray-800 border border-gray-700 rounded-xl p-6 shadow-md hover:shadow-red-900/30 transform hover:scale-105 transition-all duration-300" 
-                    variants={fadeUp}
-                    custom={index}
                   >
                     <div className="flex items-start mb-4">
-                      <Film className="w-8 h-8 text-red-500 mr-3 flex-shrink-0" />
+                      <Film className="w-8 h-8 text-orange-600 mr-3 flex-shrink-0" />
                     </div>
                     <p className="text-lg text-gray-300">{text}</p>
                   </motion.div>
                 ))}
               </motion.div>
               <motion.div className="text-center" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={3}>
-                <p className="text-2xl font-semibold text-red-400">
+                <p className="text-2xl font-semibold text-orange-600">
                   Witease Media is your strategic solution.
                 </p>
               </motion.div>
@@ -285,7 +287,7 @@ function App() {
                 custom={1}
               >
                 <motion.h3
-                  className="text-xl font-bold mb-4 text-red-400"
+                  className="text-xl font-bold mb-4 text-orange-600"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
@@ -320,7 +322,7 @@ function App() {
                 custom={2}
               >
                 <motion.h3
-                  className="text-xl font-bold mb-4 text-red-400"
+                  className="text-xl font-bold mb-4 text-orange-600"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
@@ -376,7 +378,7 @@ function App() {
                   whileHover={{ scale: 1.05 }}
                 >
                   <div className="absolute top-0 right-0 w-20 h-20 -mr-10 -mt-10 bg-red-500/10 rounded-full blur-xl"></div>
-                  <h3 className="text-xl font-bold mb-2 text-red-400">Step {index + 1}</h3>
+                  <h3 className="text-xl font-bold mb-2 text-orange-600">Step {index + 1}</h3>
                   <p className="text-gray-300">{step}</p>
                 </motion.div>
               ))}
@@ -414,22 +416,22 @@ function App() {
                 {
                   title: "FAST + Indie = Flexibility",
                   description: "We're one of the few teams offering both under one roof.",
-                  icon: <Film className="w-8 h-8 text-red-500" />
+                  icon: <Film className="w-8 h-8 text-yellow-300" />
                 },
                 {
                   title: "Strategic Distribution",
                   description: "Not just 'upload and hope'—we guide you with intent.",
-                  icon: <Globe className="w-8 h-8 text-red-500" />
+                  icon: <Globe className="w-8 h-8 text-yellow-300" />
                 },
                 {
                   title: "Creative Control",
                   description: "Your voice. Your brand. We just amplify it.",
-                  icon: <Star className="w-8 h-8 text-red-500" />
+                  icon: <Star className="w-8 h-8 text-yellow-300" />
                 },
                 {
                   title: "Global Reach, Indie Ethos",
                   description: "We work with creators, not against them.",
-                  icon: <Award className="w-8 h-8 text-red-500" />
+                  icon: <Award className="w-8 h-8 text-yellow-300" />
                 }
               ].map((feature, index) => (
                 <motion.div 
@@ -440,8 +442,6 @@ function App() {
                   whileInView="visible" 
                   viewport={{ once: true }} 
                   custom={index}
-                  onMouseEnter={() => setHoveredCard(index)}
-                  onMouseLeave={() => setHoveredCard(null)}
                 >
                   <div className="bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-xl border border-gray-700 h-full transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-red-900/30">
                     <div className="absolute top-0 right-0 w-24 h-24 -mr-8 -mt-8 bg-red-500/10 rounded-full blur-xl"></div>
@@ -452,7 +452,7 @@ function App() {
                       </div>
                       
                       <div className="flex-1">
-                        <h3 className="text-xl font-bold mb-2 text-red-400">{feature.title}</h3>
+                        <h3 className="text-xl font-bold mb-2 text-yellow-300">{feature.title}</h3>
                         <p className="text-gray-300">{feature.description}</p>
                       </div>
                     </div>
@@ -473,10 +473,10 @@ function App() {
             <div className="flex justify-center mt-16 mb-12">
               <motion.h2 
                 className="text-3xl md:text-5xl font-bold text-center relative inline-block"
+                variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                variants={fadeUp}
                 custom={0}
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-orange-400 to-yellow-300">
@@ -515,7 +515,7 @@ function App() {
                 >
                   <div className="absolute -top-10 -right-10 w-40 h-40 bg-red-500/5 rounded-full blur-3xl"></div>
                   <div className="text-4xl mb-4 bg-gray-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto">{item.icon}</div>
-                  <h3 className="text-xl font-semibold mb-4 text-red-400">{item.title}</h3>
+                  <h3 className="text-xl font-semibold mb-4 text-yellow-300">{item.title}</h3>
                   <p className="text-gray-400">{item.description}</p>
                 </motion.div>
               ))}

@@ -35,8 +35,8 @@ const IndieFilms = () => {
     <div className="min-h-screen bg-black text-white flex flex-col">
       <Navbar />
 
-      <main className="flex-grow">
-        <section className="mt-48 px-4 sm:px-6 lg:px-8 pt-20 relative">
+      <main className="flex-grow flex items-center justify-center h-screen">
+        <section className="px-4 sm:px-6 lg:px-8 relative w-full">
 
           {/* Glowing cinematic lighting */}
           <motion.div
@@ -112,7 +112,7 @@ const IndieFilms = () => {
           {/* Main content */}
           <div className="max-w-7xl mx-auto text-center relative z-10">
             <motion.h1
-              className="text-4xl md:text-6xl font-bold mb-6 leading-tight relative inline-block"
+              className="text-4xl md:text-6xl mt-20 font-bold mb-6 leading-tight relative inline-block"
               initial="hidden"
               animate="visible"
               variants={fadeUp}
@@ -133,7 +133,7 @@ const IndieFilms = () => {
             </motion.p>
 
             <motion.div
-              className="relative inline-block"
+              className="relative inline-block mb-8"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               initial={{ opacity: 0 }}

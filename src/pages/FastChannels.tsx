@@ -33,11 +33,11 @@ const FastChannels = () => {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
-        <div className="min-h-screen bg-black text-white flex flex-col">
+        <div className="min-h-screen bg-black text-white flex flex-col overflow-x-hidden">
             <Navbar />
 
-            <main className="flex-grow">
-                <section className="mt-48 px-4 sm:px-6 lg:px-8 pt-20 relative">
+            <main className="flex-grow flex items-center justify-center">
+                <section className="px-4 sm:px-6 lg:px-8 py-40 relative w-full">
                     {/* Cinematic lighting effects */}
                     <motion.div 
                         className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 rounded-full bg-red-500/20 blur-3xl"
@@ -110,10 +110,10 @@ const FastChannels = () => {
                             );
                         })}
                     </motion.div>
-                    <div className="max-w-7xl mt-20 mx-auto text-center relative z-10">
-                        <motion.div className="mb-12">
+                    <div className="max-w-7xl mx-auto text-center relative z-10">
+                        <motion.div className="mb-16">
                             <motion.h1
-                                className="text-4xl md:text-6xl font-bold mb-6 leading-tight relative inline-block"
+                                className="text-4xl md:text-6xl mt-32 font-bold mb-6 leading-tight relative inline-block"
                                 initial="hidden"
                                 animate="visible"
                                 variants={fadeUp}
@@ -134,7 +134,7 @@ const FastChannels = () => {
                         </motion.div>
 
                         <motion.div 
-                            className="relative inline-block"
+                            className="relative inline-block mb-40"
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}
                             initial={{ opacity: 0 }}
@@ -144,7 +144,7 @@ const FastChannels = () => {
                             <motion.button 
                                 whileHover={{ scale: 1.05 }} 
                                 whileTap={{ scale: 0.95 }} 
-                                className="bg-gradient-to-r from-red-600 to-orange-500 text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors inline-flex items-center shadow-lg shadow-red-900/30"
+                                className="hover:cursor-pointer bg-gradient-to-r from-red-600 to-orange-500 text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors inline-flex items-center shadow-lg shadow-red-900/30"
                             >
                                 Apply Now
                                 <ArrowRight className="ml-2 w-5 h-5" />

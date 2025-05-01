@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import logo from '../../public/logo.png'
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -14,7 +15,9 @@ const Footer = () => {
             onClick={() => navigate('/')}
             whileHover={{ scale: 1.05 }}
           >
-            <div className="font-bold text-2xl text-orange-500 hover:cursor-pointer">WITEASE MEDIA</div>
+            <div className="font-bold text-2xl text-orange-500 hover:cursor-pointer">
+              <img src={logo} alt="Witease" className="h-20" />
+            </div>
           </motion.div>
           <p className="text-white text-sm">© 2025 Witease Media, LLC. All rights reserved.</p>
         </div>

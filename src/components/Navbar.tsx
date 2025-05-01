@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import logo from '../../public/logo.png'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,7 +39,9 @@ const Navbar = () => {
             onClick={() => navigate('/')}
             whileHover={{ scale: 1.05 }}
           >
-            <div className="font-bold text-2xl text-orange-500 hover:cursor-pointer">WITEASE MEDIA</div>
+            <div className="font-bold text-2xl text-orange-500 hover:cursor-pointer">
+            <img src={logo} alt="Witease" className="h-20" />
+            </div>
           </motion.div>
           <div className="hidden md:flex items-center space-x-8">
             <button onClick={() => navigate('/fastchannels')} className="text-white hover:text-orange-500 font-medium transition-colors">
